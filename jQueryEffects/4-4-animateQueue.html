@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>animate()</title>
+  </head>
+  <body>
+    <!-- 예제 1 -->
+    <script>
+      $(function () {
+        $('button').click(function () {
+          let div = $('div')
+          div.animate({ height: '300px', opacity: '0.4' }, 'slow')
+          div.animate({ width: '300px', opacity: '0.8' }, 'slow')
+          div.animate({ height: '100px', opacity: '0.4' }, 'slow')
+          div.animate({ width: '100px', opacity: '0.8' }, 'slow')
+        })
+      })
+    </script>
+    <h1>jQuery animate() method</h1>
+    <hr />
+    <h2>Ex 1</h2>
+    <button>Start Animation</button><br /><br />
+    <div style="background: #d5ddbc; height: 100px; width: 100px; position: relative"></div>
+    <hr />
+    <!-- 예제 2 -->
+    <script>
+      $(document).ready(function () {
+        $('#btn').click(function () {
+          let div = $('#div')
+          div.animate({ left: '300px' }, 'slow')
+          div.animate({ fontSize: '3em' }, 'slow')
+        })
+      })
+    </script>
+    <h2>Ex 2</h2>
+    <button id="btn">Start Animation</button><br /><br />
+    <div id="div" style="background: #98bf21; height: 100px; width: 200px; position: absolute">👀</div>
+  </body>
+</html>

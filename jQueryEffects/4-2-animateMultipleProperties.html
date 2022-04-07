@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>animate()</title>
+  </head>
+  <body>
+    <script>
+      $(function () {
+        $('#to_L').click(function () {
+          $('div').animate({
+            left: '250px',
+            height: '+=150px',
+            width: '+=150px',
+          })
+        })
+        $('#to_S').click(function () {
+          $('div').animate({
+            height: '-=150px',
+            width: '-=150px',
+          })
+        })
+      })
+    </script>
+    <h1>jQuery animate() method</h1>
+
+    <button id="to_L">계속 커지는 버튼</button>
+    <button id="to_S">계속 작아지는 버튼</button>
+    <br /><br />
+    <div style="background: #d5ddbc; height: 100px; width: 100px; position: absolute"></div>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery Event Methods</title>
+  </head>
+  <body>
+    <h1>jQuery Event Methods</h1>
+    <hr />
+    <!-- click() 이벤트 메서드 -->
+    <script>
+      $(document).ready(function () {
+        $('p').click(function () {
+          $(this).hide()
+        })
+      })
+    </script>
+    <h2>click()</h2>
+    <p>If you click on me, I will disappear.</p>
+    <p>Click me away!</p>
+    <p>Click me too!</p>
+    <hr />
+
+    <!-- dblclick() 이벤트 메서드 -->
+    <script>
+      $(document).ready(function () {
+        $('#p').dblclick(function () {
+          $(this).hide()
+        })
+      })
+    </script>
+
+    <h2>dblclick()</h2>
+    <p id="p">If you double-click on me, I will disappear.</p>
+    <hr />
+
+    <!-- mouseenter() 이벤트 메서드 -->
+    <script>
+      $(function () {
+        $('#p1').mouseenter(function () {
+          alert('You entered #p1')
+        })
+      })
+    </script>
+
+    <h2>mouseenter()</h2>
+    <p id="p1">Enter this #p1 paragraph.</p>
+    <hr />
+
+    <!-- mouseleave() 이벤트 메서드 -->
+    <script>
+      $(function () {
+        $('#p2').mouseleave(function () {
+          alert('Bye! You now leave #p2!')
+        })
+      })
+    </script>
+
+    <h2>mouseleave()</h2>
+    <p id="p2">This is a #p2 paragraph.</p>
+    <hr />
+
+    <!-- mousedown() 이벤트 메서드 -->
+    <script>
+      $(function () {
+        $('#p3').mousedown(function () {
+          alert('Mouse down over #p3')
+        })
+      })
+    </script>
+
+    <h2>mousedown()</h2>
+    <p id="p3">This is a #p3 paragraph.</p>
+    <hr />
+
+    <!-- mouseup() 이벤트 메서드 -->
+    <script>
+      $(function () {
+        $('#p4').mouseup(function () {
+          alert('Mouse up over #p3')
+        })
+      })
+    </script>
+
+    <h2>mouseup()</h2>
+    <p id="p4">This is a #p4 paragraph.</p>
+    <hr />
+
+    <!-- hover() 이벤트 메서드 -->
+    <script>
+      $(function () {
+        $('#p5').hover(
+          function () {
+            alert('Now hover #p5!')
+          },
+          function () {
+            $('#p5').hide()
+          },
+        )
+      })
+    </script>
+
+    <h2>hover()</h2>
+    <p id="p5">This is a #p5 paragraph.</p>
+    <hr />
+
+    <!-- focus() 이벤트 메서드 -->
+    <script>
+      $(function () {
+        $('input').focus(function () {
+          $(this).css('background', 'yellow')
+        })
+        $('input').blur(function () {
+          $(this).css('background', 'green')
+        })
+      })
+    </script>
+
+    <h2>focus()</h2>
+    Name: <input type="text" name="fullname" /><br />
+    E-mail: <input type="text" name="email" />
+    <hr />
+
+    <!-- on() 이벤트 메서드 1 -->
+    <script>
+      $(function () {
+        $('.p1').on('click', function () {
+          $(this).hide()
+        })
+      })
+    </script>
+
+    <h2>on()</h2>
+    <p class="p1">If you click on me, I will disappear.</p>
+    <p class="p1">Click me away!</p>
+    <p class="p1">Click me too!</p>
+    <hr />
+
+    <!-- on() 이벤트 메서드 2 -->
+    <script>
+      $(document).ready(function () {
+        $('.p2').on({
+          mouseenter: function () {
+            $(this).css('background-color', 'lightgray')
+          },
+          mouseleave: function () {
+            $(this).css('background-color', 'lightblue')
+          },
+        })
+      })
+    </script>
+
+    <h2>on()</h2>
+    <h3>on()메서드는 하나 이상의 event handlers를 연결한다.</h3>
+    <p class="p2">Click or move the mouse pointer over this paragraph.</p>
+    <hr />
+  </body>
+</html>

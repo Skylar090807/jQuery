@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>animate()</title>
+  </head>
+  <body>
+    <script>
+      $(function () {
+        $('button').click(function () {
+          $('div').animate({ left: '250px' })
+        })
+      })
+    </script>
+    <h1>jQuery animate() method</h1>
+    <p>
+      기본적으로 모든 HTML 요소는 정적 위치를 가지며 이동할 수 없다. 위치를 조작하려면 먼저 요소의 CSS 위치 속성을
+      relative, fixed 또는 absolute로 설정해야 한다!
+    </p>
+    <button>Start Animation</button><br /><br />
+    <div style="background: #d5ddbc; height: 100px; width: 100px; position: absolute"></div>
+  </body>
+</html>
