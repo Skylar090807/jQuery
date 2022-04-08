@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Set Content and Attributes</title>
+  </head>
+  <body>
+    <!-- Set Content and Attributes  -->
+    <script>
+      $(document).ready(function () {
+        $('#btn1').click(function () {
+          $('.p1').text('text 바꾸기!')
+        })
+        $('#btn2').click(function () {
+          $('.p2').html('<b>html 적용하기!</b>')
+        })
+        $('#btn3').click(function () {
+          $('#input').val('Amazing!')
+        })
+      })
+    </script>
+
+    <h1>jQuery Set Content and Attributes</h1>
+
+    <p class="p1">This is a paragraph.</p>
+    <p class="p2">This is a another paragraph.</p>
+
+    <p class="p3">Input field: <input type="text" id="input" value="Skylar" /></p>
+
+    <button id="btn1">Set Text</button>
+    <button id="btn2">Set Html</button>
+    <button id="btn3">Set Value</button>
+    <hr />
+
+    <!-- A Callback Function for text(), html(), and val() -->
+    <script>
+      $(function () {
+        $('#test-btn1').click(function () {
+          $('#test1').text(function (i, origTxt) {
+            return 'Old text: ' + origTxt + 'New text: 새로운 텍스트! (index: ' + i + ')'
+          })
+        })
+
+        $('#test-btn2').click(function () {
+          $('#test2').html(function (i, origText) {
+            return 'Old html: ' + origText + 'New html: 새로운 <b>world!<b/> (index: ' + i + ')'
+          })
+        })
+      })
+    </script>
+
+    <h1>A Callback Function for text(), html(), and val()</h1>
+
+    <p id="test1">This is a <b>bold</b> paragraph.</p>
+    <p id="test2">This is another <b>bold</b> paragraph.</p>
+
+    <button id="test-btn1">Show Old/New Text</button>
+    <button id="test-btn2">Show Old/New HTML</button>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Add Several New Elements With append() and prepend()</title>
+  </head>
+  <body>
+    <!-- Add Several New Elements With append() -->
+    <script>
+      const appendText = () => {
+        //Create text with HTML
+        let txt1 = '<p>txt1: paragraph tag Text</p>'
+        //Create text with jQuery
+        let txt2 = $('<p></p>').text('txt2: jQuery Method text() Text')
+        //Create text with DOM
+        let txt3 = document.createElement('p')
+        txt3.innerHTML = 'txt3: document.createElement Text'
+        //jQuery append new elements
+        $('body').append(txt1, txt2, txt3)
+      }
+
+      const prependText = () => {
+        //Create text with HTML
+        let txt1 = '<p>txt1: paragraph tag Text</p>'
+        //Create text with jQuery
+        let txt2 = $('<p></p>').text('txt2: jQuery Method text() Text')
+        //Create text with DOM
+        let txt3 = document.createElement('p')
+        txt3.innerHTML = 'txt3: document.createElement Text'
+        //jQuery append new elements
+        $('body').prepend(txt1, txt2, txt3)
+      }
+    </script>
+    <h1>Add Several New Elements With append()</h1>
+    <p>This is a paragraph.</p>
+    <button onclick="prependText()">Prepend text</button>
+    <button onclick="appendText()">Append text</button>
+  </body>
+</html>
