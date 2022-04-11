@@ -4,20 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
     <title>jQuery remove() Method</title>
   </head>
   <body>
     <script>
       $(document).ready(function(){
         $("button").click(function(){
-          $("#div1").remove();
+          $("div").remove();
         });
       });
       </script>
       </head>
       <body>
       
-      <div id="div1" style="height:100px;width:300px;border:1px solid black;background-color:yellow;">
+      <div  style="height:100px;width:300px;border:1px solid black;background-color:lightyellow;">
       
       This is some text in the div.
       <p>This is a paragraph in the div.</p>

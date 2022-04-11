@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery Manipulating CSS toggleClass()</title>
+  </head>
+  <body>
+    <!-- toggleClass() Method Example-->
+    <script>
+      $(document).ready(function(){
+        $("button").click(function(){
+          $("h1, h2, p").toggleClass("lightblue")
+        })
+      })
+    </script>
+    <style>
+      .lightblue {
+        color: lightblue;
+      }
+      </style>
+      </head>
+      <body>
+      
+      <h1>Heading 1</h1>
+      <h2>Heading 2</h2>
+      
+      <p>This is a paragraph.</p>
+      <p>This is another paragraph.</p>
+      
+      <button>Toggle class</button>
+  </body>
+</html>

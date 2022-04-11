@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery More width() and height()</title>
+  </head>
+  <body>
+    <!-- 전체 widow viewport width, height -->
+    <script>
+      $(document).ready(function () {
+        $('button').click(function () {
+          var txt = ''
+          txt += 'Document width/height: ' + $(document).width()
+          txt += 'x' + $(document).height() + '\n'
+          txt += 'Window width/height: ' + $(window).width()
+          txt += 'x' + $(window).height()
+          alert(txt)
+        })
+      })
+    </script>
+    <button>Display dimensions of document and window</button>
+
+    <!-- 지정된 <div> element의 width와 height를 설정. -->
+      <script>
+        $(document).ready(function(){
+          $("#123").click(function(){
+            $("#div1").width(500).height(500)
+          })
+        })
+        </script>
+        <style>
+        #div1 {
+          height: 100px;
+          width: 300px;
+          padding: 10px;
+          margin: 3px;
+          border: 1px solid blue;
+          background-color: lightblue;
+        }
+        </style>
+        </head>
+        <body>
+        
+        <div id="div1"></div>
+        <br>
+        
+        <button id="123">Resize div</button>
+  </body>
+</html>
