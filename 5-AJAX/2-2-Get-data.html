@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery $.get() Method</title>
+  </head>
+  <body>
+    <script>
+      $(function () {
+        $('button').click(() => {
+          const getData = $.get('https://jsonplaceholder.typicode.com/posts', {}, (data, status) => {
+            // 2. 팀장님 code ✨
+            // console.log(data, status)
+            // let elem = ''
+            // const list = $('.list')
+            // for (const row of data) {
+            //   // list.append(`<div data-id=${row.id}>${row.title}</div>`)
+            //   elem += `<div data-id=${row.id}> title ${row.id}: ${row.title}</div>`
+            // }
+            // list.html(elem)
+
+            // 3. 팀장님 code 보고 따라하기
+            console.log(data, status)
+            let element = ''
+            const list = $('.list')
+            data.map((item) => {
+              element += `<div data-id=${item.id}> title ${item.id}: ${item.title}</div>`
+            })
+            list.html(element)
+
+            // 1. 내가 짠 code 💩
+            // data.map((it) => {
+            // $('.list').append('id:' + it.id) // 당연히 가로로 찍힘.
+            // $('.list').append(`<p>id: ${it.id} </p>`) //Maximum call stack - 셀렉터를 .list로 바꾸어 지금은 기능함.
+            // Maximum call stack이 된 이유
+            // p tag를 셀렉터로 잡아와 map 돌리며 append 메서드로 p tag를 추가했기 때문에 map을 돌면서 p tag를 계속 추가하고 추가된 p tag까지 또 찾는 과정에서 발생.
+            // $('.list').html(`<p>id: ${it.id} </p>`) //id: 100 하나만 찍힘.
+            // id: 100 하나만 찍히는 이유
+            // html()메서드는 param에 data set 되면 기존 data를 지우고 새로운 데이터를 보여준다.
+            // id: 1부터 100까지 map을 돌면서 계속해서 대체되다가 100에 도달했을 때 데이터를 보여준 것.
+            // })
+          })
+        })
+      })
+    </script>
+    <button>Send an HTTP GET request to a page and get the result back</button>
+    <div class="list"></div>
+  </body>
+</html>

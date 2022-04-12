@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      .ancestors * {
+        display: block;
+        border: 2px solid lightgrey;
+        color: lightgrey;
+        padding: 5px;
+        margin: 15px;
+      }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery parentsUntil() Method</title>
+  </head>
+  <script>
+    $(function () {
+      $('span').parentsUntil('div').css({
+        color: 'darkred',
+        border: '2px solid darkred',
+      })
+    })
+  </script>
+  <body class="ancestors">
+    body (great-great-grandparent 고조부모)
+    <div style="width: 500px">
+      div (great-grandparent 증조부모)
+      <ul>
+        ul (grandparent 조부모)
+        <li>
+          li (direct parent 부모)
+          <span>span</span>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

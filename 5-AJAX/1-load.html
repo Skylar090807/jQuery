@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery load() Method</title>
+  </head>
+  <body>
+    <!-- load() URL에 파일내용 전달해 div요소에 로드  -->
+    <script>
+      $(document).ready(function () {
+        $('#button1').click(function () {
+          $('#div1').load('https://jsonplaceholder.typicode.com/posts')
+        })
+      })
+    </script>
+    <div id="div1"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+    <button id="button1">Get External Content</button>
+    <hr />
+
+    <!-- "demo_test.txt" 파일 내에서 id="p1"인 요소의 콘텐츠를 특정 <div>요소로 로드 -->
+    <script>
+      $(document).ready(function () {
+        $('#button2').click(function () {
+          $('#div2').load('https://jsonplaceholder.typicode.com/posts #p1')
+        })
+      })
+    </script>
+    <div id="div2"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+    <button id="button2">Get External Content</button>
+    <hr />
+
+    <!-- load() 메서드가 완료된 후 실행 할 콜백 함수 지정 -->
+    <script>
+      $(document).ready(function () {
+        $('#button3').click(function () {
+          $('#div3').load('https://jsonplaceholder.typicode.com/posts', function (responseTxt, statusTxt, xhr) {
+            if (statusTxt == 'success') alert('External content loaded successfully!')
+            if (statusTxt == 'error') alert('Error: ' + xhr.status + ':' + xhr.statusText)
+          })
+        })
+      })
+    </script>
+    <div id="div3"><h2>Let jQuery AJAX Change This Text</h2></div>
+
+    <button id="button3">Get External Content</button>
+  </body>
+</html>
