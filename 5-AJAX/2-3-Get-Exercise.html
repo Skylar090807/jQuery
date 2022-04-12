@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery $.get() Method Exercise</title>
+  </head>
+  <body>
+    <style>
+      button {
+        padding: 5px;
+        text-align: center;
+        background-color: #e5eecc;
+        /* border: solid 1px #c3c3c3; */
+        border: none;
+        border-radius: 5px;
+        font-weight: bold;
+      }
+
+      .panel {
+        display: none;
+        padding: 50px;
+        background-color: #e5eecc;
+        /* border: solid 1px #c3c3c3; */
+        border-radius: 5px;
+        font-weight: bold;
+      }
+    </style>
+    <script>
+      $(() => {
+        $('.button1').click(() => {
+          $.get('https://jsonplaceholder.typicode.com/posts/1/comments', {}, (data, stauts) => {
+            console.log('button1', data, status)
+            const email = $('.email')
+            data.map((it) => {
+              email.append(`<div>email ${it.id}: ${it.email}</div>`)
+            })
+          })
+          $('.email').slideToggle('slow')
+        })
+      })
+
+      $(() => {
+        $('.button2').click(() => {
+          $.get('https://jsonplaceholder.typicode.com/posts/1/comments', {}, (data, status) => {
+            console.log('button2', data, status)
+            const content = $('.content')
+            let elem = ''
+            data.map((it) => {
+              elem += `<div>content ${it.id}: ${it.body}</div>`
+            })
+            content.html(elem)
+          })
+          $('.content').slideToggle('slow')
+        })
+      })
+
+      $(() => {
+        $('.empty').click((e) => {
+          $('.panel').empty()
+        })
+      })
+    </script>
+
+    <br />
+    <button class="button1">Click! Check Email List!</button><br /><br />
+    <div class="email panel"></div>
+
+    <br />
+    <button class="button2">Click! Check content!</button><br /><br />
+    <div class="content panel"></div>
+
+    <br />
+    <button class="empty">REMOVE!!!!</button>
+  </body>
+</html>
