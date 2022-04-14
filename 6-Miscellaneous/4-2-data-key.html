@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery data(key) Method</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(function () {
+        $('button').click(function () {
+          let value
+          switch ($('button').index(this)) {
+            case 0:
+              value = $('#div').data('blah')
+              break
+            case 1:
+              $('#div').data('blah', 'hello')
+              value = '저장완료! 첫번째 버튼을 눌러 확인하세요!'
+              break
+            case 2:
+              $('#div').data('blah', 86)
+              value = '저장완료! 첫번째 버튼을 눌러 확인하세요!'
+              break
+            case 3:
+              $('#div').removeData('blah')
+              value = '데이터를 삭제했습니다!'
+              break
+            default:
+              break
+          }
+          $('span').text('' + value)
+        })
+      })
+    </script>
+    <style>
+      span {
+        color: rgb(252, 195, 195);
+      }
+    </style>
+    <div id="div">div에는 "blah"라는 데이터가 저장되어있습니다.</div>
+    <br /><br />
+    <button>div에서 가져온 "blah" 확인하기</button>
+    <button>"blah" 데이터를 "hello"로 변경</button>
+    <button>"blah" 데이터를 86으로 변경</button>
+    <button>"blah" 데이터 지우기</button> <br /><br />
+    <div id="paragraph">현재 div의 "blah"데이터는 <span>?</span></div>
+  </body>
+</html>

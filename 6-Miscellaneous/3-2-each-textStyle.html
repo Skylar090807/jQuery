@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery each() Method</title>
+    <style>
+      ul {
+        font-size: 18px;
+        margin: 0;
+      }
+      span {
+        color: rgb(168, 168, 228);
+        text-decoration: underline;
+        cursor: pointer;
+      }
+      .example {
+        font-style: italic;
+      }
+    </style>
+  </head>
+  <body>
+    To do list: <span>(click here to change)</span>
+    <ul>
+      <li>Eat</li>
+      <li>Sleep</li>
+      <li>Be merry</li>
+    </ul>
+    <script>
+      $('span').click(function () {
+        $('li').each(function () {
+          $(this).toggleClass('example')
+        })
+      })
+    </script>
+  </body>
+</html>
