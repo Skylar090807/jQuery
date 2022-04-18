@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery index() no element</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(() => {
+        let flower = $('li').index($('#flower'))
+        $('div').html('li element에 flower는 존재하지 않으므로, <br/> flower의 index는 : ' + flower + ' 입니다.')
+      })
+    </script>
+    <style>
+      div {
+        font-weight: bold;
+        color: lightseagreen;
+      }
+    </style>
+    <h1>jQuery index() no element</h1>
+    <ul>
+      <li id="zero">zero</li>
+      <li id="first">first</li>
+      <li id="second">second</li>
+      <br />
+      <div></div>
+    </ul>
+  </body>
+</html>

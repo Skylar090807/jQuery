@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery index(element) Method</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(() => {
+        $('div').html('zero의 인덱스: ' + $('#zero').index('li'))
+      })
+    </script>
+    <style>
+      div {
+        font-weight: bold;
+        color: cornflowerblue;
+      }
+    </style>
+    <h1>jQuery index(element) Method</h1>
+    <br />
+    <ul>
+      <li id="zero">zero</li>
+      <li id="first">first</li>
+      <li id="second">second</li>
+    </ul>
+    <div></div>
+  </body>
+</html>

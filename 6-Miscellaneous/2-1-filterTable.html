@@ -7,12 +7,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>jQuery filter() Method</title>
     <script>
-      $(document).ready(function () {
-        $('#myInput').on('keyup', function () {
-          let value = $(this).val().toLowerCase()
-          $('#myTable tr').filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+      $(document).ready(() => {
+        $('#myInput').on('keyup', function (e) {
+          let value = $(e.target).val().toLowerCase()
+          const filter = $('#myTable tr').filter(function () {
+            return $(this).text().toLowerCase().indexOf(value) === -1
+            //$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
           })
+          for (const i of filter) {
+            $(i).toggle(false)
+          }
         })
       })
     </script>
