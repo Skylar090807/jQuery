@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery .get(index) Method</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(() => {
+        //.get(-1)로 index에 -1을 주면 li element의 형제 중 마지막 element가 return된다.
+        const getElement = $('li').get(-1)
+        console.log(getElement)
+        $('div').text('li element의 0번째 element는 : <li id = "zero">zero</li>입니다.')
+      })
+    </script>
+    <style>
+      div {
+        font-weight: bold;
+        color: lightsteelblue;
+      }
+    </style>
+    <h1>jQuery .get(index) Method</h1>
+    <ul>
+      <li id="zero">zero</li>
+      <li id="first">first</li>
+      <li id="second">second</li>
+    </ul>
+    <br />
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery param() Method, Serialize a few complex objects</title>
+  </head>
+  <body>
+    <script>
+      let obj1 = {
+        a: [2, 3, 4],
+      }
+      let obj2 = {
+        a: { b: 1, c: 2 },
+        d: [3, 4, { e: 5 }],
+      }
+
+      let shallowObj1 = $.param(obj1, true)
+      let serializeObj1 = $.param(obj1)
+      let shallowObj2 = $.param(obj2, true)
+      let serializeObj2 = $.param(obj2)
+
+      $(document).ready(() => {
+        $('.obj1-shallow').on('click', () => {
+          alert(shallowObj1)
+        })
+        $('.obj1-serialize').on('click', () => {
+          alert(serializeObj1)
+        })
+        $('.obj2-shallow').on('click', () => {
+          alert(shallowObj2)
+        })
+        $('.obj2-serialize').on('click', () => {
+          alert(serializeObj2)
+        })
+      })
+    </script>
+    <h1>jQuery param() Method, Serialize a few complex objects</h1>
+    <button class="obj1-shallow">obj1 얕은 serialize(직렬화)</button>
+    <button class="obj1-serialize">obj1 serialize(직렬화)</button>
+    <button class="obj2-shallow">obj2 얕은 serialize(직렬화)</button>
+    <button class="obj2-serialize">obj2 serialize(직렬화)</button>
+  </body>
+</html>

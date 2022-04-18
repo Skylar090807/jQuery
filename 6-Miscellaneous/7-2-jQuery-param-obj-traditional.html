@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>jQuery param(obj, traditional) Method</title>
+  </head>
+  <body>
+    <script>
+      let myObject = {
+        a: {
+          //
+          one: 1,
+          two: 2,
+          three: 3,
+        },
+        b: [1, 2, 3],
+      }
+      let shallowEncoded = $.param(myObject, true)
+      // decodeURIComponent() 함수는 URI(Uniform Resource Identifier) 컴포넌트를 해독한다.
+      let shallowDecoded = decodeURIComponent(shallowEncoded)
+
+      $(document).ready(() => {
+        $('.encoded').click(function () {
+          alert(shallowEncoded)
+        })
+        $('.decoded').on('click', function () {
+          alert(shallowDecoded)
+        })
+      })
+    </script>
+    <h1>jQuery param(obj, traditional) Method</h1>
+    <button class="encoded">얕은 부호화(암호화)한 결과</button>
+    <button class="decoded">얕은 복호화(해독)한 결과</button>
+  </body>
+</html>
