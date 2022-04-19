@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>jQuery .trigger(eventType[, extraParameters]) Method</title>
+  </head>
+  <body>
+    <script>
+      const update = (el) => {
+        let number = parseInt(el.text(), 10)
+        el.text(number + 1)
+      }
+      $(document).ready(() => {
+        $('button')
+          .first()
+          .on('click', () => {
+            update($('span').first())
+          })
+        $('button')
+          .last()
+          .on('click', () => {
+            $('button').first().trigger('click')
+            update($('span').last())
+          })
+      })
+    </script>
+    <style>
+      h3 {
+        color: darkslategrey;
+      }
+      button {
+        margin-right: 5px;
+        padding: 10px;
+        border-style: none;
+        background: lightsteelblue;
+        color: whitesmoke;
+        font-weight: bold;
+        border-radius: 5px;
+      }
+      div {
+        margin-bottom: 5px;
+        color: rgb(14, 58, 140);
+        font-weight: bold;
+      }
+    </style>
+    <h1>jQuery .trigger(eventType[, extraParameters]) Method</h1>
+    <br />
+    <h3>1번 버튼 클릭 시 1번 횟수만 증가되며, 2번 버튼 클릭 시 1번과 2번 횟수 모두 증가됩니다.</h3>
+    <br />
+    <button>1번 버튼</button>
+    <button>2번 버튼</button>
+    <br /><br />
+    <div>1번 버튼 click 횟수: <span>0</span></div>
+    <div>2번 버튼 click 횟수: <span>0</span></div>
+  </body>
+</html>

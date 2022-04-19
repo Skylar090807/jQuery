@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>jQuery length</title>
+
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+  </head>
+  <body>
+    <script>
+      $(document).ready(() => {
+        $('#button')
+          .on('click', () => {
+            $(document.body).append($('<div>'))
+            let divCounter = $('div').length
+            $('h3').text(`div Counter: 현재 div는 ${divCounter}개 입니다.`)
+          })
+          // Trigger the click to start
+          .trigger('click')
+      })
+    </script>
+    <style>
+      div {
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        float: left;
+        background: rgb(183, 144, 189);
+        border-radius: 100%;
+      }
+      h3 {
+        color: rgb(105, 136, 129);
+        margin: 10px;
+      }
+      button {
+        margin: 10px;
+        border-style: none;
+        background: rgb(133, 170, 218);
+        font-weight: bold;
+        color: whitesmoke;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+    <h1>jQuery length</h1>
+    <h2>div 추가 버튼을 click하면 div가 늘어납니다.</h2>
+    <h3></h3>
+    <button id="button">div 추가 버튼</button>
+    <br /><br />
+    <div id="1"></div>
+  </body>
+</html>

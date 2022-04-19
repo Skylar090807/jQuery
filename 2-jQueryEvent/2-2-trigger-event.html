@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>jQuery trigger(event[, extraParameters])</title>
+  </head>
+  <body>
+    <script>
+      // submit() 함수를 사용하지 않고 첫 번째 양식을 제출하기 1
+      $(document).ready(() => {
+        $('form').first().trigger('submit')
+      })
+
+      // submit() 함수를 사용하지 않고 첫 번째 양식을 제출하기 2
+      $(document).ready(() => {
+        let event = jQuery.Event('submit')
+        $('form').first().trigger(event)
+        // jQuery event.isDefaultPrevented() return: Boolean
+        if (event.isDefaultPrevented()) {
+          //Perform an action
+        }
+      })
+
+      // 이벤트에 임의의 데이터를 전달하기
+      $(document).ready(() => {
+        $('p')
+          .on('click', (event, a, b) => {
+            // 일반 클릭이 발생하면 a와 b는 undefined.
+            // 아래와 같은 트리거에 대해 a는 "foo"를 의미하고 b는 "bar"를 의미한다.
+          })
+          .trigger('click', ['foo', 'bar'])
+      })
+
+      // 이벤트 객체를 통해 임의의 데이터를 전달하기
+      $(document).ready(() => {
+        let event = jQuery.Event('logged')
+        event.user = 'foo'
+        event.pass = 'bar'
+        $('body').trigger(event)
+      })
+
+      // 이벤트 객체를 통해 데이터를 전달하기
+      $(document).ready(() => {
+        $('body').trigger({
+          type: 'logged',
+          user: 'foo',
+          pass: 'bar',
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>jQuery .toArray() Method</title>
+  </head>
+  <body>
+    <script>
+      $(document).ready(() => {
+        const toArray = () => {
+          alert($('li').toArray())
+          console.log($('li').toArray())
+        }
+        toArray()
+      })
+      // 0: li#li1
+      // 1: li#li2
+      // 2: li#li3
+    </script>
+    <li id="li1"></li>
+    <li id="li2"></li>
+    <li id="li3"></li>
+  </body>
+</html>
