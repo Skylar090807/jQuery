@@ -9,26 +9,28 @@
   </head>
   <body>
     <script>
-      $(() => {
-        const display = (divs) => {
-          let array = []
-          for (let i = 0; i < divs.length; i++) {
-            array.push(divs[i].innerHTML)
-          }
-          $('span').text(array.join(' '))
-        }
+      // $(() => {
+      //   const display = (divs) => {
+      //     let array = []
+      //     for (let i = 0; i < divs.length; i++) {
+      //       array.push(divs[i].innerHTML)
+      //     }
+      //     $('span').text(array.join(' '))
+      //     console.log(array)
+      //   }
 
-        display($('div').toArray().reverse())
-      })
+      //   display($('div').toArray().reverse())
+      // })
 
+      //위 for문 map으로 바꾸려다 실패함
       // $(document).ready(() => {
       //   const displayMap = (divs) => {
       //     let array = []
       //     array.map((it) => {
-      //       it.divs.innerHTML
+      //       it.push(divs.innerHTML)
       //     })
       //     $('span').text(array.join(' '))
-      //     console.log(divs)
+      //     console.log(array)
       //   }
 
       //   displayMap($('div').toArray().reverse())
