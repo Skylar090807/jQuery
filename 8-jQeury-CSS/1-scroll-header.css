@@ -1,0 +1,81 @@
+body {
+  margin: 0;
+}
+
+.container {
+}
+
+/* Header */
+header {
+  color: #000;
+  text-align: center;
+  font-size: 20px;
+  /* 모든 요소는 position: fixed;를 주면 inline-block이 되기 때문에 width:100%;가 사라진다.
+     따라서 width:100%;를 따로 줘야한다.
+  */
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+header div {
+}
+.lnb-inner {
+  background: lightblue;
+  height: 40px;
+  line-height: 40px;
+}
+.gnb-inner {
+  background: lightpink;
+  height: 80px;
+  line-height: 80px;
+}
+.lnb-inner,
+.gnb-inner {
+  transition: 0.5s;
+}
+/* Header active */
+header.active .lnb-inner {
+  /* display: none; */
+  /* transition을 사용하고 싶으면 display: none;을 하면 안 된다. */
+  height: 0;
+  overflow: hidden;
+}
+header.active .gnb-inner {
+  background: #fff;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.1);
+  color: #000;
+}
+
+/* Section */
+section {
+}
+section p {
+  font-size: 3em;
+  color: #ddd;
+  line-height: 2em;
+}
+
+/* btn-top Button */
+.btn-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  font-size: 2em;
+  width: 80px;
+  height: 80px;
+  background: rgba(0, 0, 0, 0.5);
+  text-align: center;
+  line-height: 80px;
+  border-radius: 50%;
+  color: #fff;
+  /* btn-top 안 보이게 하기 */
+  transform: translateY(100px);
+  opacity: 0;
+  transition: 0.5s;
+}
+/* btn-top active */
+.btn-top.active {
+  transform: translateY(0);
+  opacity: 1;
+}
